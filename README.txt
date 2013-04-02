@@ -21,6 +21,9 @@ Event-Driven Architecture. Actually none of the Events
 are currently crossing Context boundaries. Still, you
 can look at the tests to see how the Events would be
 handled if the Bounded Contexts were actually deployed.
+You can also see a bit of Published Language in the
+Notifications that (would) arrive in the iddd_algotrader
+and iddd_nanotrader Bounded Contexts.
 
 I created a simple Pub-Sub messaging mechanism that I
 named SlothMQ. (Yeah.) The tests that run the Sloth are
@@ -46,7 +49,7 @@ iddd_tradercommon/build/reports/tests/index.html
 
 
 Actually iddd_nanoreports doesn't do anything yet. It's
-just a placeholder to remote the reporting type things
+just a placeholder to remove the reporting type things
 from the iddd_nanotrader Bounded Context. This may change
 quite a bit by the time it's done.
 
