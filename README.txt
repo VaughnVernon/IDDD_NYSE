@@ -5,7 +5,7 @@ the model using a DDD approach.
 
 This is a work in progress. The various Bounded Contexts
 (iddd_nanotrader, iddd_algotrader, iddd_nanoreports) and
-the common Subdomains and reusable tools found in
+the Supporting Subdomains and reusable tools found in
 iddd_tradercommon are not complete. In particular when
 a market order and a slice order are executed, the
 requests just fall off a cliff. Currently the models
@@ -24,6 +24,18 @@ handled if the Bounded Contexts were actually deployed.
 You can also see a bit of Published Language in the
 Notifications that (would) arrive in the iddd_algotrader
 and iddd_nanotrader Bounded Contexts.
+
+Note that the Account Subdomain in iddd_nanotrader has
+lost its way. This should (very likely) be in its own
+Bounded Context. It seems like many trading providers
+are full-on financial services organizations, and user
+accounts may include checking, savings, 401K, etc., in
+addition to a standard brokerage/trading account. Yet,
+leaving the Account Subdomain in this model allows me
+to use it to teach some Context Mapping and Subdomain
+identification techniques in class. It's a darling of
+a legacy smell, even though I have cleaned up the model
+substantially compared to the original.
 
 I created a simple Pub-Sub messaging mechanism that I
 named SlothMQ. (Yeah.) The tests that run the Sloth are
